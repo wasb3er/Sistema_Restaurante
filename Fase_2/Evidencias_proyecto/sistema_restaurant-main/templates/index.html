@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}"> <!--botón para el icono en la pestaña-->
+</head >
+<button class="btn-admin" onclick="window.location.href='{% url 'login' %}'">
+  Ingresar como administrador
+</button>
+<body>
+
+  <div id="inicio">
+  <button>Ordena Aquí</button>
+  <a href="{% url 'menu' %}" class="boton-menu">Ver menú de platillos</a>
+
+</div>
+<!---->
+<!--Formulario-->
+<div id="formulario" style="display:none; text-align:center; margin-top:20px;">
+  <h2>Ingresa tus datos</h2>
+  <form id="datosForm">
+    <label for="nombre">Nombre:</label><br>
+    <input type="text" id="nombre" name="nombre" required><br><br>
+
+    <label for="personas">Cantidad de personas:</label><br>
+    <input type="number" id="personas" name="personas" min="1" required><br><br>
+
+    <button type="submit">Continuar</button>
+  </form>
+</div>
+
+<div id="menu" style="display:none;">
+
+  <!--MODIFICAR LINEA, SOLO PARA QUE EN LA CONSOLA SALGA SIN ERRORES-->
+   <p id="resumen" style="text-align:center; font-weight:bold; margin-bottom:10px;"></p>
+  
+<h2>Control de Mesas</h2>
+<!--Eliminacion de formulario de pruebas-->
+<div class="pisos-control">
+  <button id="btnPiso1">Primer Piso</button>
+  <button id="btnPiso2">Segundo Piso</button>
+</div>
+
+<!--Primer Piso-->
+<div class="salon" id="primer-piso">
+  <div id="mesa1" class="mesa disponible" role="button" tabindex="0" aria-pressed="false" aria-label="Mesa 1 disponible">
+    <div class="chair top"></div>
+    <div class="chair right"></div>
+    <div class="chair bottom"></div>
+    <div class="chair left"></div>
+    <div class="table"></div>
+    <div class="label">Mesa 1</div>
+    <div class="status">Disponible</div>
+    <div class="timer">00:00:00</div>
+  </div>
+
+  <div id="mesa2" class="mesa disponible" role="button" tabindex="0" aria-pressed="false" aria-label="Mesa 2 disponible">
+    <div class="chair top"></div>
+    <div class="chair right"></div>
+    <div class="chair bottom"></div>
+    <div class="chair left"></div>
+    <div class="table"></div>
+    <div class="label">Mesa 2</div>
+    <div class="status">Disponible</div>
+    <div class="timer">00:00:00</div>
+  </div>
+
+  <div id="mesa3" class="mesa disponible" role="button" tabindex="0" aria-pressed="false" aria-label="Mesa 3 disponible">
+    <div class="chair top"></div>
+    <div class="chair right"></div>
+    <div class="chair bottom"></div>
+    <div class="chair left"></div>
+    <div class="table"></div>
+    <div class="label">Mesa 3</div>
+    <div class="status">Disponible</div>
+    <div class="timer">00:00:00</div>
+  </div>
+</div>
+
+<!--Segundo Piso-->
+<div class="salon" id="segundo-piso" style="display:none;">
+  <div id="mesa4" class="mesa disponible" role="button" tabindex="0" aria-pressed="false" aria-label="Mesa 4 disponible">
+    <div class="chair top"></div>
+    <div class="chair right"></div>
+    <div class="chair bottom"></div>
+    <div class="chair left"></div>
+    <div class="table"></div>
+    <div class="label">Mesa 4</div>
+    <div class="status">Disponible</div>
+    <div class="timer">00:00:00</div>
+  </div>
+
+  <div id="mesa5" class="mesa disponible" role="button" tabindex="0" aria-pressed="false" aria-label="Mesa 5 disponible">
+    <div class="chair top"></div>
+    <div class="chair right"></div>
+    <div class="chair bottom"></div>
+    <div class="chair left"></div>
+    <div class="table"></div>
+    <div class="label">Mesa 5</div>
+    <div class="status">Disponible</div>
+    <div class="timer">00:00:00</div>
+  </div>
+</div>
+</div>
+
+<div id="acciones" style="text-align: center; margin-top: 20px; display: none;">
+    <button id="btnIrMenu">Ir al Menú</button>
+  </div>
+    
+
+<script src="{% static 'js/index.js' %}"></script>
+</body>
+</html>
+
